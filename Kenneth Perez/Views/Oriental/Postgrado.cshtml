@@ -1,0 +1,47 @@
+﻿@model List<Kenneth_Perez.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Oriental";
+
+}
+
+<h4 class="text-success">Administración de Categorías</h4>
+
+<div>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    Id_Categoria
+                </th>
+                <th>
+                    Nombre Categoria
+                </th>
+                <th>
+                    Descripcion
+                </th>
+                <th>
+                    Fecha Creacion
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdCategoria</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Descripcion</td>
+                        <td>@item.Fecha</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <a class="btn btn-success">Nueva Categoria</a>
+</div>
