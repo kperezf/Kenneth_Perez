@@ -23,7 +23,7 @@ namespace Kenneth_Perez.Controllers
 
             categorias.Add (new Categoria()
             {
-                IdCategoria = "01",
+                IdCategoria = 01,
                 Nombre = "Kenneth Perez",
                 Descripcion = "Cualquiera",
                 Fecha = "10/02/2022"
@@ -31,7 +31,7 @@ namespace Kenneth_Perez.Controllers
 
             categorias.Add(new Categoria()
             {
-                IdCategoria = "03",
+                IdCategoria = 03,
                 Nombre = "Francela Sevilla",
                 Descripcion = "Cualquiera",
                 Fecha = "12/02/2022"
@@ -39,7 +39,7 @@ namespace Kenneth_Perez.Controllers
 
             categorias.Add(new Categoria()
             {
-                IdCategoria = "04",
+                IdCategoria = 04,
                 Nombre = "Cristobal Cruz",
                 Descripcion = "Cualquiera",
                 Fecha = "22/02/2022"
@@ -87,5 +87,11 @@ namespace Kenneth_Perez.Controllers
 
             return View(productos);
         }
+
+        public IActionResult Modulo()
+        {
+            return View();
+        }
+
     }
 }

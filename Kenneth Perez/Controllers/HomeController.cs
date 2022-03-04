@@ -28,7 +28,7 @@ namespace Kenneth_Perez.Controllers
             return View();
         }
 
-        public IActionResult V_Oriental1()
+        public IActionResult Editarcat()
         {
             return View();
         }
@@ -39,4 +39,5 @@ namespace Kenneth_Perez.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+  
 }
