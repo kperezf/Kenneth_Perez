@@ -1,32 +1,28 @@
 ﻿<h4 class="text-success">Crear Producto</h4>
 
-<form asp-action="Crearproduct">
-  <div class="row">
-   
-        <div class="col-md-6">
+<form asp-action="Crearproduct" autocomplete="off">
+            <div class="form-group">
+                <label class="col-form-label">Id Categoria</label>
+                <input class="form-control" type="number" name="IdCategoria" />
+            </div>
             <div class="form-group">
                 <label class="col-form-label">Nombre Producto</label>
-                <input class="form-control" type="text" />
+                <input class="form-control" type="text" name="Nombre" maxlength="100" />
             </div>
             <div class="form-group">
                 <label class="col-form-label">Precio</label>
-                <input class="form-control" type="number" />
-             </div>
-        </div>
-
-        <div class="col-md-6">
-             <div class="form-group">
+                <input class="form-control" type="number" name="Precio"/>
+            </div>
+            <div class="form-group">
                 <label class="col-form-label">Descripciòn</label>
-                <input class="form-control" type="text" />
-             </div>
+                <textarea class="form-control" name="Descripcion" maxlength="500"></textarea>
+            </div>
 
-             <div class="form-group">
+            <div class="form-group">
                 <label class="col-form-label">Fecha Creaciòn</label>
-                <input class="form-control" type="date" />
-             </div>
-        </div>
-  </div>
-  <div>
-    <input type="submit" value="Guardar" class="btn btn-success" href=""/>
-  </div>
+                <input class="form-control" type="date" name="Fecha" />
+            </div>
+            <div>
+                <input type="submit" value="Guardar" class="btn btn-success" href=""/>
+            </div>
 </form>

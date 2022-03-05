@@ -41,7 +41,7 @@ namespace Kenneth_Perez.Controllers
             _mydb.Categoria.Add(categoria);
             _mydb.SaveChanges();
 
-            return RedirectToAction("Postgrado");
+            return RedirectToAction("Editarcat");
         }
 
         public IActionResult Editarprod()
@@ -54,7 +54,7 @@ namespace Kenneth_Perez.Controllers
             _mydb.Producto.Add(producto);
             _mydb.SaveChanges();
 
-            return RedirectToAction("Productos");
+            return RedirectToAction("Editarprod");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
