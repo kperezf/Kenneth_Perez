@@ -12,5 +12,7 @@ namespace Kenneth_Perez.Data
 
         //Una propiedad por cada tabla
         public DbSet<Categoria> Categoria { get; set; }
-    }
+
+        public DbSet<Producto> Producto { get; set; }
+}
 }

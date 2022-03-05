@@ -34,15 +34,15 @@
 
         <tbody>
             @{
-                foreach (var item in Model)
+                foreach (var producto in Model)
                 {
                     <tr>
-                        <td>@item.IdProducto</td>
-                        <td>@item.IdCategoria</td>
-                        <td>@item.Nombre</td>
-                        <td>@item.Precio</td>
-                        <td>@item.Descripcion</td>
-                        <td>@item.Fecha</td>
+                        <td>@producto.IdProducto</td>
+                        <td>@producto.IdCategoria</td>
+                        <td>@producto.Nombre</td>
+                        <td>@producto.Precio</td>
+                        <td>@producto.Descripcion</td>
+                        <td>@producto.Fecha</td>
                     </tr>
                 }
             }
@@ -51,7 +51,7 @@
 </div>
 
 <div class="text-center">
-    <a class="btn btn-success mt-1" href="~/Home/Editarcat">Nuevo Producto</a>
+    <a class="btn btn-success mt-1" href="~/Home/Editarprod">Nuevo Producto</a>
 </div>
 <div class="text-center">
     <a class="btn btn-success mt-1" href="">Editar Producto</a>

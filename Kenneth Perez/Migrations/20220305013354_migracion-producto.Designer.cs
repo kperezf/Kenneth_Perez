@@ -3,14 +3,16 @@ using Kenneth_Perez.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Kenneth_Perez.Migrations
 {
     [DbContext(typeof(MyDB))]
-    partial class MyDBModelSnapshot : ModelSnapshot
+    [Migration("20220305013354_migracion-producto")]
+    partial class migracionproducto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,18 +73,7 @@ namespace Kenneth_Perez.Migrations
 
                     b.HasKey("IdProducto");
 
-                    b.HasIndex("IdCategoria");
-
                     b.ToTable("Producto");
-                });
-
-            modelBuilder.Entity("Kenneth_Perez.Models.Producto", b =>
-                {
-                    b.HasOne("Kenneth_Perez.Models.Categoria", "Categoria")
-                        .WithMany()
-                        .HasForeignKey("IdCategoria")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

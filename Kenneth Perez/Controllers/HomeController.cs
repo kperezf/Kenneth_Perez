@@ -1,4 +1,5 @@
-﻿using Kenneth_Perez.Models;
+﻿using Kenneth_Perez.Data;
+using Kenneth_Perez.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,10 +13,12 @@ namespace Kenneth_Perez.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly MyDB _mydb;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, MyDB mydb)
         {
             _logger = logger;
+            _mydb = mydb;
         }
 
         public IActionResult Index()
@@ -31,6 +34,27 @@ namespace Kenneth_Perez.Controllers
         public IActionResult Editarcat()
         {
             return View();
+        }
+
+        public IActionResult Crearcateg(Categoria categoria)
+        {
+            _mydb.Categoria.Add(categoria);
+            _mydb.SaveChanges();
+
+            return RedirectToAction("Postgrado");
+        }
+
+        public IActionResult Editarprod()
+        {
+            return View();
+        }
+
+        public IActionResult Crearproduct(Producto producto)
+        {
+            _mydb.Producto.Add(producto);
+            _mydb.SaveChanges();
+
+            return RedirectToAction("Productos");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

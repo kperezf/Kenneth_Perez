@@ -11,6 +11,8 @@ namespace Kenneth_Perez.Controllers
 {
     public class OrientalController : Controller
     {
+       
+
         public IActionResult Index()
         {
             return View();
@@ -18,7 +20,8 @@ namespace Kenneth_Perez.Controllers
 
         public IActionResult Postgrado()
         {
-            //Simular los datos como si tenemos la BD
+            List<Categoria> categoria = _mydb.Categoria.ToList();
+            /*Simular los datos como si tenemos la BD
             List<Categoria> categorias = new List<Categoria>();
 
             categorias.Add (new Categoria()
@@ -44,20 +47,21 @@ namespace Kenneth_Perez.Controllers
                 Descripcion = "Cualquiera",
                 Fecha = "22/02/2022"
             });
-
-
             return View(categorias);
+            */
+            return View(categoria);
         }
 
         public IActionResult Productos()
         {
-            //Simular los datos como si tenemos la BD
+            List<Producto> producto = _mydb.Producto.ToList();
+            /*Simular los datos como si tenemos la BD
             List<Producto> productos = new List<Producto>();
 
             productos.Add(new Producto()
             {
-                IdProducto = "10",
-                IdCategoria = "04",
+                IdProducto = 10,
+                IdCategoria = 04,
                 Nombre = "Kenneth Perez",
                 Precio = 100,
                 Descripcion = "Cualquiera",
@@ -66,8 +70,8 @@ namespace Kenneth_Perez.Controllers
 
             productos.Add(new Producto()
             {
-                IdProducto = "11",
-                IdCategoria = "05",
+                IdProducto = 11,
+                IdCategoria = 05,
                 Nombre = "Fracela Sevilla",
                 Precio = 150,
                 Descripcion = "Cualquiera",
@@ -76,16 +80,18 @@ namespace Kenneth_Perez.Controllers
 
             productos.Add(new Producto()
             {
-                IdProducto = "09",
-                IdCategoria = "07",
+                IdProducto = 09,
+                IdCategoria = 07,
                 Nombre = "Cristobal Cruz",
                 Precio = 300,
                 Descripcion = "Cualquiera",
                 Fecha = "25/03/2022"
             });
 
-
             return View(productos);
+            */
+
+            return View(producto);
         }
 
         public IActionResult Modulo()
