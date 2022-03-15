@@ -1,1 +1,51 @@
-﻿<h1>Bievenido al Modulo</h1>
+﻿@model List<Kenneth_Perez.Models.Modulo>
+
+@{
+    ViewData["Title"] = "Oriental";
+
+}
+
+<h4 class="text-success">Administración de Modulos</h4>
+
+<div>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    Id_Modulo
+                </th>
+                <th>
+                    Id_Propetario
+                </th>
+                 <th>
+                    Propietario
+                </th>
+                <th>
+                    Descripcion
+                </th>
+                <th>
+                    Fecha Creacion
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+           @{
+                foreach (var modulo in Model)
+                {
+                    <tr>
+                        <td>@modulo.IdModulo</td>
+                        <td>@modulo.IdPropietario</td>
+                        <td>@modulo.Nombre</td>
+                        <td>@modulo.Descripcion</td>
+                        <td>@modulo.Fecha</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="text-center">
+    <a class="btn btn-success mt-1" href="~/Home/Editarmodu">Nuevo Modulo</a>
+</div>

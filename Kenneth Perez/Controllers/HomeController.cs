@@ -57,6 +57,20 @@ namespace Kenneth_Perez.Controllers
             return RedirectToAction("Editarprod");
         }
 
+        public IActionResult Editarmodu()
+        {
+            return View();
+        }
+        
+        public IActionResult Crearmodulo(Modulo modulo)
+        {
+            _mydb.Modulo.Add(modulo);
+            _mydb.SaveChanges ();
+
+            return RedirectToAction("Editarmodu");
+
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -1,0 +1,25 @@
+﻿<h4 class="text-success">Crear Modulo</h4>
+
+<form asp-action="Crearmodulo" autocomplete="off">
+            <div class="form-group">
+                <label class="col-form-label">Id Propetario</label>
+                <input class="form-control" type="number" name="IdPropietario" />
+            </div>
+            <div class="form-group">
+                <label class="col-form-label">Nombre Propietario</label>
+                <input class="form-control" type="text" name="Nombre" maxlength="100"/>
+            </div>
+   
+            <div class="form-group">
+                <label class="col-form-label">Descripciòn</label>
+                <textarea class="form-control" name="Descripcion" maxlength="500"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Fecha Creaciòn</label>
+                <input class="form-control" type="date" name="Fecha" />
+            </div>
+            <div>
+                <input type="submit" value="Guardar" class="btn btn-success" href=""/>
+            </div>
+</form>   

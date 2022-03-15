@@ -14,5 +14,7 @@ namespace Kenneth_Perez.Data
         public DbSet<Categoria> Categoria { get; set; }
 
         public DbSet<Producto> Producto { get; set; }
-}
+
+        public DbSet<Modulo> Modulo { get; set; }
+    }
 }
