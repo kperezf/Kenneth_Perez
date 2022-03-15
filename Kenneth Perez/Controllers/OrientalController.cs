@@ -27,8 +27,8 @@ namespace Kenneth_Perez.Controllers
 
         public IActionResult Postgrado()
         {
-            List<Categoria> categoria = _mydb.Categoria.ToList();            
-            return View(categoria);
+            List<Categoria> categorias = _mydb.Categoria.ToList();            
+            return View(categorias);
         }
 
         public IActionResult Productos()
@@ -41,6 +41,28 @@ namespace Kenneth_Perez.Controllers
         {
             List<Modulo> modulo = _mydb.Modulo.ToList();
             return View(modulo);
+        }
+
+        public IActionResult Editarcate(int IdCategoria)
+        {
+            Categoria modelo = _mydb.Categoria.Where(c => c.IdCategoria == IdCategoria).FirstOrDefault();
+            return View("Editarcate", modelo);
+        }
+
+        public IActionResult Editarcategoria(Categoria categoria)
+        {
+            //Recupero el valor actual de la BD//
+            Categoria categoriasActual = _mydb.Categoria
+                .Where(Kenneth_Perez => Kenneth_Perez.IdCategoria == categoria.IdCategoria).FirstOrDefault();
+
+            //Actualizo el nombre de la Categoria con el nuevo valor//
+            categoriasActual.Nombre = categoria.Nombre;
+
+            //Persisto los datos en la BD//
+            _mydb.SaveChanges();
+
+            List<Categoria> categorias = _mydb.Categoria.ToList();
+            return RedirectToAction("Postgrado", categorias);
         }
 
     }

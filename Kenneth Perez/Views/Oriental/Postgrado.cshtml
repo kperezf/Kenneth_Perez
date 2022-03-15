@@ -23,6 +23,9 @@
                 <th>
                     Fecha Creacion
                 </th>
+                <th>
+                    Acciones a Realizar
+                </th>
             </tr>
         </thead>
 
@@ -35,6 +38,10 @@
                         <td>@categoria.Nombre</td>
                         <td>@categoria.Descripcion</td>
                         <td>@categoria.Fecha</td>
+                        <td>
+                            <a class="btn btn-info" href=@Url.Action("Editarcate", new{IdCategoria = categoria.IdCategoria})>Editar</a>
+                            <a class="btn btn-danger" asp-action="Eliminarcate">Eliminar</a>
+                        </td>
                     </tr>
                 }
             }

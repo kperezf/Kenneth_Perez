@@ -1,0 +1,13 @@
+﻿@model Kenneth_Perez.Models.Categoria
+
+<h4 class="text-success">Editar Categoría</h4>
+
+<form asp-action="Editarcategoria" autocomplete="off">
+            <div class="form-group">             
+                <input class="form-control" type="text" name="Nombre" value="@Model.Nombre"/>
+                <input type="hidden" name="Id" value="@Model.IdCategoria"/>
+            </div>            
+            <div>
+                <input type="submit" value="Actualizar" class="btn btn-success" href=""/>
+            </div>
+</form> 
