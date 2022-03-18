@@ -1,0 +1,13 @@
+﻿@model Kenneth_Perez.Models.Modulo
+
+<h4 class="text-success">Editar Modulo</h4>
+
+<form asp-action="Editarmodulos" autocomplete="off">
+            <div class="form-group">             
+                <input class="form-control" type="text" name="Nombre" value=@Model.Nombre/>
+                <input type="hidden" name="Id" value=@Model.IdModulo/>
+            </div>            
+            <div>
+                <input type="submit" value="Actualizar" class="btn btn-success" href=""/>
+            </div>
+</form> 

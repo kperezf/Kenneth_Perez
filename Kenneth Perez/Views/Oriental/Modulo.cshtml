@@ -26,6 +26,9 @@
                 <th>
                     Fecha Creacion
                 </th>
+                <th>
+                    Acciones a Realizar
+                </th>
             </tr>
         </thead>
 
@@ -39,6 +42,10 @@
                         <td>@modulo.Nombre</td>
                         <td>@modulo.Descripcion</td>
                         <td>@modulo.Fecha</td>
+                        <td>
+                            <a class="btn btn-info" href=@Url.Action("Editarmodulo", new{IdModulo = modulo.IdModulo})>Editar</a>
+                            <a class="btn btn-danger" href=@Url.Action("Eliminarmodulo", new{IdModulo = modulo.IdModulo})>Eliminar</a>
+                        </td>
                     </tr>
                 }
             }

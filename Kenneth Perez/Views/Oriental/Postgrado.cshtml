@@ -40,7 +40,7 @@
                         <td>@categoria.Fecha</td>
                         <td>
                             <a class="btn btn-info" href=@Url.Action("Editarcate", new{IdCategoria = categoria.IdCategoria})>Editar</a>
-                            <a class="btn btn-danger" asp-action="Eliminarcate">Eliminar</a>
+                            <a class="btn btn-danger" href=@Url.Action("Eliminarcate", new{IdCategoria = categoria.IdCategoria})>Eliminar</a>
                         </td>
                     </tr>
                 }

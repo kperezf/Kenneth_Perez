@@ -39,8 +39,8 @@ namespace Kenneth_Perez.Controllers
 
         public IActionResult Modulo()
         {
-            List<Modulo> modulo = _mydb.Modulo.ToList();
-            return View(modulo);
+            List<Modulo> modulos = _mydb.Modulo.ToList();
+            return View(modulos);
         }
 
         public IActionResult Editarcate(int IdCategoria)
@@ -63,6 +63,65 @@ namespace Kenneth_Perez.Controllers
 
             List<Categoria> categorias = _mydb.Categoria.ToList();
             return RedirectToAction("Postgrado", categorias);
+        }
+
+        public IActionResult Eliminarcate(int IdCategoria)
+        {
+            List<Producto> producto = _mydb.Producto.Where(c => c.IdCategoria == IdCategoria).ToList();
+
+            //Elimino todos los productos asociados a la categoria//
+            if (producto != null)
+                _mydb.RemoveRange(producto);
+
+            //Con el Entity eliminar el valor//
+            Categoria categoria = _mydb.Categoria.Where(c => c.IdCategoria == IdCategoria).FirstOrDefault();
+
+              if (categoria != null)
+                _mydb.RemoveRange(categoria);
+
+            _mydb.SaveChanges();
+
+            List<Categoria> categorias = _mydb.Categoria.ToList();
+            return View("Postgrado");
+        }
+
+        public IActionResult Editarmodulo(int IdModulo)
+        {
+            Modulo modelo = _mydb.Modulo.Where(c => c.IdModulo == IdModulo).FirstOrDefault();
+            return View("Modulo", modelo);
+        }
+
+        public IActionResult Editarmodulos(Modulo modulos)
+        {
+            //Recupero el valor actual de la BD//
+            Modulo moduloActual = _mydb.Modulo
+                .Where(Kenneth_Perez => Kenneth_Perez.IdModulo == modulos.IdModulo).FirstOrDefault();
+
+            //Actualizo el nombre de la Categoria con el nuevo valor//
+            moduloActual.Nombre = modulos.Nombre;
+
+            //Persisto los datos en la BD//
+            _mydb.SaveChanges();
+
+
+            List<Modulo> modulo = _mydb.Modulo.ToList();
+            return RedirectToAction("Modulo", modulo);
+        }
+
+        public IActionResult Eliminarmodulo(int IdModulo)
+        {
+
+            //Con el Entity eliminar el valor//
+            Modulo modulo = _mydb.Modulo.Where(c => c.IdModulo == IdModulo).FirstOrDefault();
+
+            if (modulo != null)
+                _mydb.RemoveRange(modulo);
+
+            _mydb.SaveChanges();
+
+            
+            List<Modulo> modulos = _mydb.Modulo.ToList();
+            return View("Modulo");
         }
 
     }
