@@ -88,7 +88,7 @@ namespace Kenneth_Perez.Controllers
         public IActionResult Editarmodulo(int IdModulo)
         {
             Modulo modelo = _mydb.Modulo.Where(c => c.IdModulo == IdModulo).FirstOrDefault();
-            return View("Modulo", modelo);
+            return View("Editarmodulo", modelo);
         }
 
         public IActionResult Editarmodulos(Modulo modulo)
