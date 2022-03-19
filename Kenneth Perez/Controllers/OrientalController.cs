@@ -91,21 +91,21 @@ namespace Kenneth_Perez.Controllers
             return View("Modulo", modelo);
         }
 
-        public IActionResult Editarmodulos(Modulo modulos)
+        public IActionResult Editarmodulos(Modulo modulo)
         {
             //Recupero el valor actual de la BD//
             Modulo moduloActual = _mydb.Modulo
-                .Where(Kenneth_Perez => Kenneth_Perez.IdModulo == modulos.IdModulo).FirstOrDefault();
+                .Where(Kenneth_Perez => Kenneth_Perez.IdModulo == modulo.IdModulo).FirstOrDefault();
 
             //Actualizo el nombre de la Categoria con el nuevo valor//
-            moduloActual.Nombre = modulos.Nombre;
+            moduloActual.Nombre = modulo.Nombre;
 
             //Persisto los datos en la BD//
             _mydb.SaveChanges();
 
 
-            List<Modulo> modulo = _mydb.Modulo.ToList();
-            return RedirectToAction("Modulo", modulo);
+            List<Modulo> modulos = _mydb.Modulo.ToList();
+            return RedirectToAction("Modulo", modulos);
         }
 
         public IActionResult Eliminarmodulo(int IdModulo)
