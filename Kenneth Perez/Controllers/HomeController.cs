@@ -41,7 +41,7 @@ namespace Kenneth_Perez.Controllers
             _mydb.Categoria.Add(categoria);
             _mydb.SaveChanges();
 
-            return RedirectToAction("Editarcat");
+            return RedirectToAction("");
         }
 
         public IActionResult Editarprod()
@@ -54,7 +54,7 @@ namespace Kenneth_Perez.Controllers
             _mydb.Producto.Add(producto);
             _mydb.SaveChanges();
 
-            return RedirectToAction("Editarprod");
+            return RedirectToAction("");
         }
 
         public IActionResult Editarmodu()
@@ -65,9 +65,9 @@ namespace Kenneth_Perez.Controllers
         public IActionResult Crearmodulo(Modulo modulo)
         {
             _mydb.Modulo.Add(modulo);
-            _mydb.SaveChanges ();
+            _mydb.SaveChanges();
 
-            return RedirectToAction("Editarmodu");
+            return RedirectToAction("");
 
         }
 

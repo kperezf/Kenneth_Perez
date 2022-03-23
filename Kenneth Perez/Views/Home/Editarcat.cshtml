@@ -3,19 +3,29 @@
 <form asp-action="Crearcateg" autocomplete="off">
             <div class="form-group">
                 <label class="col-form-label">Nombre Categoria</label>
-                <input class="form-control" type="text" name="Nombre" maxlength="100"/>
+                <input class="form-control" type="text" nombre-categoria name="Nombre" maxlength="100"/>
             </div>
    
             <div class="form-group">
                 <label class="col-form-label">Descripciòn</label>
-                <textarea class="form-control" name="Descripcion" maxlength="500"></textarea>
+                <textarea class="form-control" descripcion-categoria name="Descripcion" maxlength="500"></textarea>
             </div>
 
             <div class="form-group">
                 <label class="col-form-label">Fecha Creaciòn</label>
-                <input class="form-control" type="date" name="Fecha" />
+                <input class="form-control" type="date" fecha-categoria name="Fecha" />
             </div>
             <div>
-                <input type="submit" value="Guardar" class="btn btn-success" href=""/>
+               <input type="submit" value="Guardar" class="btn btn-success" href=""/>
             </div>
 </form>   
+
+<div class="contenedore">
+
+</div>
+
+@section Scripts{
+    <script src="~/js/Categoria.js">
+ 
+    </script>
+}

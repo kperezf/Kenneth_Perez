@@ -39,8 +39,8 @@
                         <td>@categoria.Descripcion</td>
                         <td>@categoria.Fecha</td>
                         <td>
-                            <a class="btn btn-info" href=@Url.Action("Editarcate", new{IdCategoria = categoria.IdCategoria})>Editar</a>
-                            <a class="btn btn-danger" href=@Url.Action("Eliminarcate", new{IdCategoria = categoria.IdCategoria})>Eliminar</a>
+                            <a class="btn btn-info" href=@Url.Action("Editarcate", new{IdCategoria = categoria.IdCategoria})><i class="fa fa-pen fa-xs"></i>Editar</a>
+                            <a class="btn btn-danger" href=@Url.Action("Eliminarcate", new{IdCategoria = categoria.IdCategoria})><i class="fa fa-trash fa-xs"></i>Eliminar</a>
                         </td>
                     </tr>
                 }
@@ -49,8 +49,8 @@
     </table>
 </div>
 
-<div class="text-center">
-    <a class="btn btn-success mt-1" href="~/Home/Editarcat">Nueva Categoria</a>
+<div class="text-center container mt-1">
+    <a class="btn btn-success" href="~/Home/Editarcat"><i class="fa fa-cart-arrow-down"></i> Nueva Categoria</a> <i class="fa-regular fa-trash-can"></i>
 </div>
 
 
